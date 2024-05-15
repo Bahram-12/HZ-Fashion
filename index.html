@@ -4,71 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HZ Fashion - Store Overview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
     <style>
+        /* Base Styles */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Playfair Display', serif; /* Rich, Times New Roman-like font */
             margin: 0;
             padding: 0;
-            background-color: #f3f3f3;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Container for content */
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
             color: #333;
         }
-        .container {
-            width: 80%;
-            max-width: 1200px;
-            margin: auto;
-            background-color: #fff;
-            padding: 20px;
+
+        /* Header with a gold-black theme */
+        header {
+            background: #d4af37; /* Gold background */
+            color: #000;
+            padding: 20px 0;
+            text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        header {
-            background: #004d99;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
+
         header h1 {
             margin: 0;
+            font-weight: 700;
+            font-size: 2.5em;
         }
-        .store-info {
-            margin: 20px 0;
-            line-height: 1.6;
+
+        /* Main content styles */
+        .content {
             text-align: center;
+            transition: opacity 2s ease-in-out;
+            opacity: 0; /* Start hidden for fade-in effect */
         }
-        .hours, .contact-info {
-            margin-bottom: 20px;
+
+        /* Styles for hours and contact info */
+        .info-section {
+            background: #f9f9f9;
+            margin: 25px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .hours h2, .contact-info h2 {
-            background-color: #004d99;
-            color: #fff;
-            padding: 5px;
-            text-align: center;
+
+        .info-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            color: #d4af37; /* Gold text for headers */
         }
-        table {
-            width: 100%;
-            margin-top: 10px;
-            border-collapse: collapse;
+
+        .info-section p, .info-section a {
+            font-family: 'Roboto', sans-serif;
+            margin: 10px 0;
         }
-        table th, table td {
+
+        /* Table-like display for hours, without using an actual table */
+        .hours-list {
+            list-style: none;
+            padding: 0;
             text-align: left;
-            padding: 8px;
-            border: 1px solid #ddd;
         }
-        table th {
-            background-color: #f7f7f7;
+
+        .hours-list li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+            font-family: 'Roboto', sans-serif;
         }
-        .contact-methods {
-            margin-top: 20px;
-            text-align: center;
+
+        .hours-list li span {
+            font-weight: bold;
+            margin-right: 10px;
         }
+
+        /* Contact methods styling */
         .contact-methods div {
             margin-bottom: 10px;
         }
+
         footer {
-            background-color: #004d99;
-            color: white;
+            background: #d4af37; /* Gold background */
+            color: #000;
             text-align: center;
-            padding: 10px 0;
+            padding: 12px 0;
             margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Apply fade-in animation */
+        .animated {
+            animation: fadeIn 1.5s ease-out forwards;
         }
     </style>
 </head>
@@ -79,26 +127,24 @@
         <h1>HZ Fashion</h1>
     </header>
 
-    <div class="store-info">
+    <div class="content animated">
         <p>Exquisite collection of hijab party dresses, casual dresses, handbags, shoes, accessories, and many more, all designed to elevate your elegance.</p>
-    </div>
 
-    <div class="hours">
-        <h2>Opening Hours</h2>
-        <table>
-            <tr><th>Monday</th><td>9:00 am - 7:00 pm</td></tr>
-            <tr><th>Tuesday</th><td>9:00 am - 7:00 pm</td></tr>
-            <tr><th>Wednesday</th><td>9:00 am - 7:00 pm</td></tr>
-            <tr><th>Thursday</th><td>9:00 am - 7:00 pm</td></tr>
-            <tr><th>Friday</th><td>9:00 am - 7:00 pm</td></tr>
-            <tr><th>Saturday</th><td>9:00 am - 7:00 pm</td></tr>
-            <tr><th>Sunday</th><td>9:00 am - 7:00 pm</td></tr>
-        </table>
-    </div>
+        <div class="info-section hours">
+            <h2>Opening Hours</h2>
+            <ul class="hours-list">
+                <li><span>Monday:</span>9:00 am - 7:00 pm</li>
+                <li><span>Tuesday:</span>9:00 am - 7:00 pm</li>
+                <li><span>Wednesday:</span>9:00 am - 7:00 pm</li>
+                <li><span>Thursday:</span>9:00 am - 7:00 pm</li>
+                <li><span>Friday:</span>9:00 am - 7:00 pm</li>
+                <li><span>Saturday:</span>9:00 am - 7:00 pm</li>
+                <li><span>Sunday:</span>9:00 am - 7:00 pm</li>
+            </ul>
+        </div>
 
-    <div class="contact-info">
-        <h2>Contact Info</h2>
-        <div class="contact-methods">
+        <div class="info-section contact-info">
+            <h2>Contact Info</h2>
             <div><strong>Address:</strong> 3192 Eglinton Avenue East, Scarborough, ON, Canada M1J 2H5</div>
             <div><strong>Phone:</strong> 647-785-8536</div>
             <div><strong>Wholesale Inquiries:</strong> 905-706-9050</div>
@@ -111,6 +157,13 @@
         <p>&copy; 2023 HZ Fashion. All rights reserved.</p>
     </footer>
 </div>
+
+<script>
+// Add smooth fade-in effect
+window.addEventListener('load', () => {
+    document.querySelector('.content').style.opacity = 1;
+});
+</script>
 
 </body>
 </html>
