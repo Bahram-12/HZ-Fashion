@@ -25,16 +25,19 @@
     flex-direction: column; /* Keeps footer at the bottom */
 }
 
-  header {
+
+        header {
             background-color: #c9b037;
             color: black;
             text-align: center;
             padding: 0;
             width: 100%;
+            position: fixed;
+            top: 0; /* Ensures header is right at the top */
+            left: 0;
             z-index: 1000;
             transition: top 0.3s;
         }
-
         .hidden-header {
             top: -100px; /* Adjust based on actual header height */
         }
