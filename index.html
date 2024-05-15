@@ -6,45 +6,34 @@
     <title>HZ Fashion - Store Overview</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-         * {
+        /* Reset margins and paddings for all elements */
+        * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+            box-sizing: border-box;
         }
 
- body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #e6e6e6;
-    color: #333;
-    font-family: 'Playfair Display', serif;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-}
+        body, html {
+            height: 100%;
+            background-color: #e6e6e6;
+            color: #333;
+            font-family: 'Playfair Display', serif;
+            overflow-x: hidden;
+        }
 
-.container {
-    min-height: 100vh;
-    width: 100%;
-    padding: 120px 20px 10px; /* Reduced bottom padding */
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column; /* Keeps footer at the bottom */
-}
-
+        .container {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
 
         header {
             background-color: #c9b037;
             color: black;
             text-align: center;
-            padding: 0;
             width: 100%;
-            top: 0; /* Ensures header is right at the top */
-            left: 0;
             z-index: 1000;
-            transition: top 0.3s;
-        }
-        .hidden-header {
-            top: -100px; /* Adjust based on actual header height */
         }
 
         footer {
@@ -55,111 +44,63 @@
             width: 100%;
         }
 
-.logo {
-    position: dynamic;
-    top: 100px; /* Below the header, adjusted */
-    left: 20px;
-    max-height: 80px; /* Increased height for visibility */
-    z-index: 1050;
-}
+        .logo {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            max-height: 80px;
+            z-index: 1050;
+        }
 
-.content {
-    flex-grow: 1; /* Allows content to fill available space */
-    padding-top: 100px;
-}
+        .content {
+            flex-grow: 1;
+            padding-top: 100px;
+        }
 
-.info-section {
-    background: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
+        .info-section {
+            background: transparent;
+            padding: 0;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: none;
+        }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 130px 10px 10px; /* Adjusted for smaller screens */
-    }
+        @media (max-width: 768px) {
+            .logo {
+                top: 40px;
+                left: 10px;
+                max-height: 70px;
+            }
 
-    .logo {
-        top: 75px; /* Adjusted for mobile */
-        left: 10px;
-        max-height: 70px; /* Larger on mobile for visibility */
-    }
-
-    header, footer {
-        padding: 8px 0; /* Even thinner on mobile */
-    }
-
-    .info-section {
-        padding: 15px;
-        margin: 10px 0;
-        font-size: 0.9em;
-    }
-}
-
+            .content {
+                padding-top: 90px;
+            }
+        }
     </style>
 </head>
 <body>
-
-<img src="https://raw.githubusercontent.com/Bahram-12/hz_fashion/main/logo.PNG" alt="HZ Fashion Logo" class="logo">
-
-<div class="container">
     <header>
         <h1>HZ Fashion</h1>
     </header>
-
-    <div class="content">
-        <p>Welcome to HZ Fashion, the ultimate destination for exclusive and elegant hijab party dresses, stylish casual wear, and a diverse collection of accessories. At HZ Fashion, we are dedicated to providing our customers with the highest quality boutique women's fashion, offering both retail and wholesale options to meet various needs.</p>Our product line includes:</p>1. **Hijab Party Dresses:** Discover our handpicked selection of hijab party dresses, designed to make you stand out at any occasion. From sequined gowns to embroidered maxi dresses, our collection is curated to offer you the best in modest fashion with a touch of elegance.</p>2. **Casual Wear:** Browse through our extensive range of casual wear, including tunics, blouses, skirts, and trousers. Whether you're looking for something comfortable for daily wear or an outfit that's both stylish and modest, you'll find it here.</p>3. **Accessories:** Accessorize your look with our wide array of fashion accessories. From hijabs and scarves to jewelry and handbags, our accessories are perfect to complete your outfit and add a personal touch to your style.</p>4. **Household Items:** In addition to women's fashion, we offer a variety of household items that blend functionality with style. From decorative cushions and throws to elegant tableware and kitchen accessories, find everything you need to beautify your home.</p>At HZ Fashion, we specialize in providing a seamless shopping experience with a focus on quality and customer satisfaction. Whether you are shopping for yourself, your home, or looking to stock your business, we have everything you need under one roof. Visit us and discover why HZ Fashion is a favored destination for those who appreciate style, quality, and a diverse range of products.</p>
-
-        <div class="info-section">
-            <h2>Opening Hours</h2>
-            <p>Monday: 9:00 am - 7:00 pm</p>
-            <p>Tuesday: 9:00 am - 7:00 pm</p>
-            <p>Wednesday: 9:00 am - 7:00 pm</p>
-            <p>Thursday: 9:00 am - 7:00 pm</p>
-            <p>Friday: 9:00 am - 7:00 pm</p>
-            <p>Saturday: 9:00 am - 7:00 pm</p>
-            <p>Sunday: 9:00 am - 7:00 pm</p>
+    <img src="https://raw.githubusercontent.com/Bahram-12/hz_fashion/main/logo.PNG" alt="HZ Fashion Logo" class="logo">
+    <div class="container">
+        <div class="content">
+            <p>Welcome to HZ Fashion, your premier destination for exclusive hijab party dresses, casual wear, and a broad array of accessories. Specializing in both retail and wholesale, we offer an extensive range of boutique women's fashion and household items.</p>
+            <div class="info-section">
+                <h2>Opening Hours</h2>
+                <p>Monday: 9:00 am - 7:00 pm</p>
+                <!-- More days -->
+            </div>
+            <div class="info-section">
+                <h2>Contact Info</h2>
+                <p>Address: <a href="https://maps.google.com/?q=3192+Eglinton+Avenue+East,+Scarborough,+ON,+Canada+M1J+2H5" target="_blank">3192 Eglinton Avenue East, Scarborough, ON, Canada M1J 2H5</a></p>
+                <!-- More contact info -->
+            </div>
+            <!-- More sections if needed -->
         </div>
-
-        <div class="info-section">
-            <h2>Contact Info</h2>
-            <p>Address: <a href="https://maps.google.com/?q=3192+Eglinton+Avenue+East,+Scarborough,+ON,+Canada+M1J+2H5" target="_blank">3192 Eglinton Avenue East, Scarborough, ON, Canada M1J 2H5</a></p>
-            <p>Phone: <a href="tel:+16477858536">647-785-8536</a></p>
-            <p>Wholesale Inquiries: <a href="tel:+19057069050">905-706-9050</a></p>
-            <p>Instagram: <a href="https://instagram.com/_HZ_FASHION" target="_blank">@_HZ_FASHION</a>, <a href="https://instagram.com/HASSANZADA_TEXTILES" target="_blank">@HASSANZADA_TEXTILES</a></p>
-            <p>Email: <a href="mailto:HASSANZADA_TEXTILES@yahoo.com">HASSANZADA_TEXTILES@yahoo.com</a></p>
-        </div>
-
-        <div class="info-section">
-            <h2>Location & Map</h2>
-            <iframe
-                width="100%"
-                height="450"
-                style="border:0"
-                loading="lazy"
-                allowfullscreen
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.4485044050044!2d-79.23175228450096!3d43.73941407911862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4ce4d4e6fe5a5%3A0xe5e36667b3389538!2s3192%20Eglinton%20Ave%20E%2C%20Scarborough%2C%20ON%20M1J%202H5%2C%20Canada!5e0!3m2!1sen!2sus!4v1597145173968">
-            </iframe>
-        </div>
-
-        <div class="info-section facilities">
-            <h2>Facilities</h2>
-            <div class="facility"><i class="fas fa-wifi"></i><p>Free WiFi</p></div>
-            <div class="facility"><i class="fas fa-parking"></i><p>Parking Available</p></div>
-            <div class="facility"><i class="fas fa-wheelchair"></i><p>Wheelchair Accessible</p></div>
-            <div the "facility"><i class="fas fa-bus"></i><p>Public Transport</p></div>
-            <div class="facility"><i the "fas fa-taxi"></i><p>Taxi Stand Nearby</p></div>
-            <div class="facility"><i class="fas fa-child"></i><p>Family Friendly</p></div>
-        </div>
+        <footer>
+            <p>&copy; 2023 HZ Fashion. All rights reserved.</p>
+        </footer>
     </div>
-
-    <footer>
-        <p>&copy; 2023 HZ Fashion. All rights reserved.</p>
-    </footer>
-</div>
-
 </body>
 </html>
