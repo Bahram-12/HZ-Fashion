@@ -1,17 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Welcome to hz_fashion</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZ Fashion - Store Overview</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        iframe { width: 100%; height: 600px; border: 1px solid #ddd; }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background: #004d99;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .store-info {
+            margin: 20px 0;
+            line-height: 1.6;
+            text-align: center;
+        }
+        .hours, .contact-info {
+            margin-bottom: 20px;
+        }
+        .hours h2, .contact-info h2 {
+            background-color: #004d99;
+            color: #fff;
+            padding: 5px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            margin-top: 10px;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            text-align: left;
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+        table th {
+            background-color: #f7f7f7;
+        }
+        .contact-methods {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .contact-methods div {
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #004d99;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to hz-fashion</h1>
-    <p>View our store overview below:</p>
-    <iframe src="hz.pdf" type="application/pdf">
-        <p>Your browser does not support PDFs. Please download the PDF to view it: <a href="StoreOverview.pdf">Download PDF</a>.</p>
-    </iframe>
+
+<div class="container">
+    <header>
+        <h1>HZ Fashion</h1>
+    </header>
+
+    <div class="store-info">
+        <p>Exquisite collection of hijab party dresses, casual dresses, handbags, shoes, accessories, and many more, all designed to elevate your elegance.</p>
+    </div>
+
+    <div class="hours">
+        <h2>Opening Hours</h2>
+        <table>
+            <tr><th>Monday</th><td>9:00 am - 7:00 pm</td></tr>
+            <tr><th>Tuesday</th><td>9:00 am - 7:00 pm</td></tr>
+            <tr><th>Wednesday</th><td>9:00 am - 7:00 pm</td></tr>
+            <tr><th>Thursday</th><td>9:00 am - 7:00 pm</td></tr>
+            <tr><th>Friday</th><td>9:00 am - 7:00 pm</td></tr>
+            <tr><th>Saturday</th><td>9:00 am - 7:00 pm</td></tr>
+            <tr><th>Sunday</th><td>9:00 am - 7:00 pm</td></tr>
+        </table>
+    </div>
+
+    <div class="contact-info">
+        <h2>Contact Info</h2>
+        <div class="contact-methods">
+            <div><strong>Address:</strong> 3192 Eglinton Avenue East, Scarborough, ON, Canada M1J 2H5</div>
+            <div><strong>Phone:</strong> 647-785-8536</div>
+            <div><strong>Wholesale Inquiries:</strong> 905-706-9050</div>
+            <div><strong>Instagram:</strong> <a href="https://instagram.com/_HZ_FASHION" target="_blank">@_HZ_FASHION</a>, <a href="https://instagram.com/HASSANZADA_TEXTILES" target="_blank">@HASSANZADA_TEXTILES</a></div>
+            <div><strong>Email:</strong> <a href="mailto:HASSANZADA_TEXTILES@yahoo.com">HASSANZADA_TEXTILES@yahoo.com</a></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 HZ Fashion. All rights reserved.</p>
+    </footer>
+</div>
+
 </body>
 </html>
