@@ -55,7 +55,7 @@
         /* Main content styling */
         .content {
             width: 100%;
-            margin-top: 100px; /* Space for fixed header */
+            padding-top: 100px; /* Space for fixed header */
             box-sizing: border-box;
         }
 
@@ -65,6 +65,7 @@
             margin: 20px 0;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
         .info-section h2 {
@@ -72,24 +73,24 @@
             margin: 10px 0;
         }
 
-        /* Icons for facilities */
-        .facilities {
+        /* Styles for facilities and review sections */
+        .facilities, .google-reviews {
             display: flex;
             justify-content: space-evenly;
             flex-wrap: wrap;
         }
 
-        .facility {
+        .facility, .review {
             margin: 10px;
             text-align: center;
         }
 
-        .facility i {
+        .facility i, .review i {
             font-size: 24px;
             color: #c9b037; /* Matching the header and footer */
         }
 
-        .facility p {
+        .facility p, .review p {
             font-size: 0.9em;
             color: #666;
         }
@@ -118,18 +119,36 @@
         <p>We offer both retail and wholesale options to meet all your fashion needs.</p>
 
         <div class="info-section">
-            <h2>Facilities</h2>
-            <div class="facilities">
-                <div class="facility"><i class="fas fa-wifi"></i><p>Free WiFi</p></div>
-                <div class="facility"><i class="fas fa-parking"></i><p>Parking Available</p></div>
-                <div class="facility"><i class="fas fa-wheelchair"></i><p>Wheelchair Accessible</p></div>
-                <div class="facility"><i class="fas fa-bus"></i><p>Public Transport</p></div>
-                <div class="facility"><i class="fas fa-taxi"></i><p>Taxi Stand Nearby</p></div>
-                <div class="facility"><i class="fas fa-child"></i><p>Family Friendly</p></div>
-            </div>
+            <h2>Opening Hours</h2>
+            <p>Monday: 9:00 am - 7:00 pm</p>
+            <p>Tuesday: 9:00 am - 7:00 pm</p>
+            <p>Wednesday: 9:00 am - 7:00 pm</p>
+            <p>Thursday: 9:00 am - 7:00 pm</p>
+            <p>Friday: 9:00 am - 7:00 pm</p>
+            <p>Saturday: 9:00 am - 7:00 pm</p>
+            <p>Sunday: 9:00 am - 7:00 pm</p>
         </div>
 
         <div class="info-section">
+            <h2>Contact Info</h2>
+            <p>Address: <a href="https://maps.google.com/?q=3192+Eglinton+Avenue+East,+Scarborough,+ON,+Canada+M1J+2H5" target="_blank">3192 Eglinton Avenue East, Scarborough, ON, Canada M1J 2H5</a></p>
+            <p>Phone: <a href="tel:+16477858536">647-785-8536</a></p>
+            <p>Wholesale Inquiries: <a href="tel:+19057069050">905-706-9050</a></p>
+            <p>Instagram: <a href="https://instagram.com/_HZ_FASHION" target="_blank">@_HZ_FASHION</a>, <a href="https://instagram.com/HASSANZADA_TEXTILES" target="_blank">@HASSANZADA_TEXTILES</a></p>
+            <p>Email: <a href="mailto:HASSANZADA_TEXTILES@yahoo.com">HASSANZADA_TEXTILES@yahoo.com</a></p>
+        </div>
+
+        <div class="info-section facilities">
+            <h2>Facilities</h2>
+            <div class="facility"><i class="fas fa-wifi"></i><p>Free WiFi</p></div>
+            <div class="facility"><i class="fas fa-parking"></i><p>Parking Available</p></div>
+            <div class="facility"><i class="fas fa-wheelchair"></i><p>Wheelchair Accessible</p></div>
+            <div class="facility"><i class="fas fa-bus"></i><p>Public Transport</p></div>
+            <div class="facility"><i class="fas fa-taxi"></i><p>Taxi Stand Nearby</p></div>
+            <div class="facility"><i class="fas fa-child"></i><p>Family Friendly</p></div>
+        </div>
+
+        <div class="info-section google-reviews">
             <h2>Google Reviews</h2>
             <p>Check out what our customers are saying on <a href="https://www.google.com/search?q=HZ+Fashion+Google+Reviews">Google Reviews</a>.</p>
         </div>
