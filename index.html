@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HZ Fashion - Store Overview</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"> <!-- For icons -->
     <style>
         /* Base Styles */
         body, html {
@@ -21,105 +22,86 @@
         .container {
             min-height: 100vh;
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            padding: 100px 20px 20px; /* Adjustments for top and bottom space */
             box-sizing: border-box;
         }
 
-        /* Header with improved styling */
-        header {
-            width: 100%;
-            text-align: center;
-            padding: 20px 0;
-            background-color: #bfa76f; /* Gold but darker for class */
+        /* Header and Footer with improved gold color */
+        header, footer {
+            background-color: #c9b037; /* A richer gold */
             color: black;
+            text-align: center;
+            padding: 15px 0;
+            width: 100%;
             position: fixed;
-            top: 0;
-            left: 0;
             z-index: 1000;
         }
 
-        header h1 {
+        header {
+            top: 0;
+            left: 0;
+        }
+
+        footer {
+            bottom: 0;
+            left: 0;
+        }
+
+        header h1, footer p {
             margin: 0;
-            font-weight: 700;
-            font-size: 2.5em;
+            font-size: 1.5em;
         }
 
         /* Main content styling */
         .content {
             width: 100%;
-            padding-top: 100px; /* Space for fixed header */
+            margin-top: 100px; /* Space for fixed header */
             box-sizing: border-box;
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-            transition: all 0.3s;
         }
 
-        /* Section styling */
         .info-section {
             background: white;
             padding: 20px;
-            margin: 20px;
+            margin: 20px 0;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
-        }
-
-        .info-section:hover {
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .info-section h2 {
             color: black;
-            margin: 0 0 10px 0;
+            margin: 10px 0;
         }
 
-        /* Style adjustments for map and contact info */
-        iframe {
-            width: calc(100% - 40px);
-            height: 300px;
-            border-radius: 8px;
-            border: none;
+        /* Icons for facilities */
+        .facilities {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
         }
 
-        footer {
-            width: 100%;
-            background-color: #bfa76f;
-            color: black;
+        .facility {
+            margin: 10px;
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            left: 0;
         }
 
-        footer p {
-            margin: 0;
+        .facility i {
+            font-size: 24px;
+            color: #c9b037; /* Matching the header and footer */
         }
 
-        /* Link styling */
-        a {
-            color: black; /* Ensuring readability */
-            text-decoration: none;
-        }
-
-        a:hover, a:focus {
-            color: #d4af37; /* Gold for highlighting */
-            text-decoration: underline;
+        .facility p {
+            font-size: 0.9em;
+            color: #666;
         }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .content {
-                padding: 100px 20px 20px; /* Adjustments for mobile */
+                margin-top: 150px; /* More space for smaller screens */
             }
 
-            iframe {
-                width: calc(100% - 40px); /* Full width for iframe */
+            .info-section {
+                margin: 10px 0;
             }
         }
     </style>
@@ -133,30 +115,23 @@
 
     <div class="content">
         <p>Exquisite collection of hijab party dresses, casual dresses, handbags, shoes, accessories, and many more, all designed to elevate your elegance.</p>
+        <p>We offer both retail and wholesale options to meet all your fashion needs.</p>
 
         <div class="info-section">
-            <h2>Opening Hours</h2>
-            <p>Monday: 9:00 am - 7:00 pm</p>
-            <p>Tuesday: 9:00 am - 7:00 pm</p>
-            <p>Wednesday: 9:00 am - 7:00 pm</p>
-            <p>Thursday: 9:00 am - 7:00 pm</p>
-            <p>Friday: 9:00 am - 7:00 pm</p>
-            <p>Saturday: 9:00 am - 7:00 pm</p>
-            <p>Sunday: 9:00 am - 7:00 pm</p>
+            <h2>Facilities</h2>
+            <div class="facilities">
+                <div class="facility"><i class="fas fa-wifi"></i><p>Free WiFi</p></div>
+                <div class="facility"><i class="fas fa-parking"></i><p>Parking Available</p></div>
+                <div class="facility"><i class="fas fa-wheelchair"></i><p>Wheelchair Accessible</p></div>
+                <div class="facility"><i class="fas fa-bus"></i><p>Public Transport</p></div>
+                <div class="facility"><i class="fas fa-taxi"></i><p>Taxi Stand Nearby</p></div>
+                <div class="facility"><i class="fas fa-child"></i><p>Family Friendly</p></div>
+            </div>
         </div>
 
         <div class="info-section">
-            <h2>Contact Info</h2>
-            <p>Address: <a href="https://maps.google.com/?q=3192+Eglinton+Avenue+East,+Scarborough,+ON,+Canada+M1J+2H5" target="_blank">3192 Eglinton Avenue East, Scarborough, ON, Canada M1J 2H5</a></p>
-            <p>Phone: <a href="tel:+16477858536">647-785-8536</a></p>
-            <p>Wholesale Inquiries: <a href="tel:+19057069050">905-706-9050</a></p>
-            <p>Instagram: <a href="https://instagram.com/_HZ_FASHION" target="_blank">@_HZ_FASHION</a>, <a href="https://instagram.com/HASSANZADA_TEXTILES" target="_blank">@HASSANZADA_TEXTILES</a></p>
-            <p>Email: <a href="mailto:HASSANZADA_TEXTILES@yahoo.com">HASSANZADA_TEXTILES@yahoo.com</a></p>
-        </div>
-
-        <div class="info-section">
-            <h2>Find Us on Google Maps</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.4485044050044!2d-79.23175228450096!3d43.73941407911862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4ce4d4e6fe5a5%3A0xe5e36667b3389538!2s3192%20Eglinton%20Ave%20E%2C%20Scarborough%2C%20ON%20M1J%202H5%2C%20Canada!5e0!3m2!1sen!2sus!4v1597145173968!5m2!1sen!2sus" allowfullscreen=""></iframe>
+            <h2>Google Reviews</h2>
+            <p>Check out what our customers are saying on <a href="https://www.google.com/search?q=HZ+Fashion+Google+Reviews">Google Reviews</a>.</p>
         </div>
     </div>
 
