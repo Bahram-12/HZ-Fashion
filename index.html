@@ -17,7 +17,7 @@
             margin: 0;
             padding: 0;
             background-color: #4e342e; /* Dark brown background */
-            color: #333;
+            color: #d4af37; /* Shiny gold text color */
             font-family: 'Playfair Display', serif;
             overflow-x: hidden;
         }
@@ -25,19 +25,19 @@
         .container {
             min-height: 100vh;
             width: 100%;
-            padding: 0px 20px 10px; /* Adjust top padding to 0 */
+            padding: 0px 20px 10px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
         }
 
         header {
-            background-color: transparent; /* Removed box color */
-            color: black;
+            background-color: transparent;
+            color: #d4af37; /* Shiny gold text color */
             text-align: center;
             padding: 10px 0;
             width: 100%;
-            position: fixed; /* Make header fixed at the top */
+            position: fixed;
             top: 0;
             left: 0;
             z-index: 1000;
@@ -49,41 +49,49 @@
 
         footer {
             background-color: #c9b037;
-            color: black;
+            color: #d4af37; /* Shiny gold text color */
             text-align: center;
             padding: 10px 0;
             width: 100%;
         }
 
         .logo {
-            margin-top: 60px; /* Margin top to push logo below header */
-            display: block; /* Ensures logo is a block for margin to work */
-            max-height: 80px;
-            z-index: 1050;
+            margin: 0 auto; /* Center the logo */
+            display: block;
+            max-height: 150px; /* Larger logo */
+            transition: opacity 0.5s, transform 0.5s; /* Smooth transition for fade and scale */
+            opacity: 1; /* Full visibility initially */
+            position: relative; /* Ensure it's above text when needed */
+            z-index: 0; /* Behind the text when scrolling down */
         }
 
         .content {
             flex-grow: 1;
-            padding-top: 20px; /* Adjust content padding */
+            padding-top: 20px;
+            position: relative;
+            z-index: 1; /* Above the logo when scrolling */
         }
 
-        .info-section {
-            background: transparent;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: none;
-            text-align: center;
+        /* General fade-in effect for content sections */
+        .info-section, p, h1, h2, footer {
+            animation: fadeIn 1.5s ease-out forwards;
+            opacity: 0; /* Start transparent, animate to opaque */
+        }
+
+        /* Keyframes for the fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 0px 10px 10px; /* Adjust top padding to 0 */
+                padding: 0px 10px 10px;
             }
 
             .logo {
-                margin-top: 70px; /* Adjust logo margin on mobile */
-                max-height: 70px;
+                margin-top: 70px;
+                max-height: 120px; /* Adjust logo size on mobile */
             }
 
             header, footer {
@@ -98,13 +106,24 @@
         }
     </style>
     <script>
+        let lastScrollTop = 0;
         window.onscroll = function() {
+            var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
             var header = document.querySelector('header');
-            if (window.pageYOffset > 0) {
+            var logo = document.querySelector('.logo');
+
+            if (currentScroll > lastScrollTop) {
+                // Scrolling down
                 header.classList.add("hidden-header");
+                logo.style.opacity = Math.max(0, 1 - currentScroll / 300);
+                logo.style.transform = 'scale(' + Math.max(0.5, 1 - currentScroll / 600) + ')';
             } else {
+                // Scrolling up
                 header.classList.remove("hidden-header");
+                logo.style.opacity = Math.min(1, (1 - currentScroll / 300) + 0.5);
+                logo.style.transform = 'scale(' + Math.min(1, (1 - currentScroll / 600) + 0.5) + ')';
             }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
         };
     </script>
 </head>
@@ -119,6 +138,12 @@
 
     <div class="content">
         <p>Welcome to HZ Fashion, the ultimate destination for exclusive and elegant hijab party dresses, stylish casual wear, and a diverse collection of accessories. At HZ Fashion, we are dedicated to providing our customers with the highest quality boutique women's fashion, offering both retail and wholesale options to meet various needs.</p>
+        <p>Our product line includes:</p>
+        <p>1. <strong>Hijab Party Dresses:</strong> Discover our handpicked selection of hijab party dresses, designed to make you stand out at any occasion. From sequined gowns to embroidered maxi dresses, our collection is curated to offer you the best in modest fashion with a touch of elegance.</p>
+        <p>2. <strong>Casual Wear:</strong> Browse through our extensive range of casual wear, including tunics, blouses, skirts, and trousers. Whether you're looking for something comfortable for daily wear or an outfit that's both stylish and modest, you'll find it here.</p>
+        <p>3. <strong>Accessories:</strong> Accessorize your look with our wide array of fashion accessories. From hijabs and scarves to jewelry and handbags, our accessories are perfect to complete your outfit and add a personal touch to your style.</p>
+        <p>4. <strong>Household Items:</strong> In addition to women's fashion, we offer a variety of household items that blend functionality with style. From decorative cushions and throws to elegant tableware and kitchen accessories, find everything you need to beautify your home.</p>
+        <p>At HZ Fashion, we specialize in providing a seamless shopping experience with a focus on quality and customer satisfaction. Whether you are shopping for yourself, your home, or looking to stock your business, we have everything you need under one roof. Visit us and discover why HZ Fashion is a favored destination for those who appreciate style, quality, and a diverse range of products.</p>
 
         <div class="info-section">
             <h2>Opening Hours</h2>
