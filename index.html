@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HZ Fashion - Store Overview</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -16,7 +17,7 @@
             height: 100%;
             margin: 0;
             padding: 0;
-            background-color: #8B5A2B; /* Warmer brown background */
+            background-color: #f5f5dc; /* Light cream background */
             color: #FAFAD2; /* Lighter gold text color, closer to white-gold */
             font-family: 'Playfair Display', serif;
             overflow-x: hidden;
@@ -25,7 +26,7 @@
         .container {
             min-height: 100vh;
             width: 100%;
-            padding: 0px 20px 10px;
+            padding: 20px 20px 10px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -37,9 +38,6 @@
             text-align: center;
             padding: 10px 0;
             width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
             z-index: 1000;
             transition: top 0.3s;
         }
@@ -48,7 +46,7 @@
         }
 
         footer {
-            background-color: #c9b037;
+            background-color: transparent;
             color: #FAFAD2; /* Lighter gold text color */
             text-align: center;
             padding: 10px 0;
@@ -56,28 +54,26 @@
         }
 
         .logo {
-            margin: 0 auto; /* Center the logo */
+            margin: 20px auto 40px; /* Center the logo and adjust margins */
             display: block;
-            max-height: 150px; /* Larger logo */
+            max-height: 120px; /* Adjusted logo size */
             transition: opacity 0.5s, transform 0.5s; /* Smooth transition for fade and scale */
             opacity: 1; /* Full visibility initially */
-            position: relative; /* Ensure it's above text when needed */
-            z-index: 0; /* Behind the text when scrolling down */
         }
 
         .content {
             flex-grow: 1;
-            padding-top: 60px; /* More padding to separate sections */
+            padding-top: 10px; /* Adjusted for spacing */
             position: relative;
             z-index: 1; /* Above the logo when scrolling */
-            text-align: center; /* Center text for intro and other sections */
+            transition: opacity 0.5s; /* Smooth transition for content */
         }
 
         /* General fade-in effect for content sections */
         .info-section, p, h1, h2, footer {
             animation: fadeIn 1.5s ease-out forwards;
             opacity: 0; /* Start transparent, animate to opaque */
-            margin: 20px 0; /* Spacing between sections */
+            margin-bottom: 40px; /* Increased spacing between sections */
         }
 
         /* Keyframes for the fade-in animation */
@@ -89,75 +85,52 @@
         /* Adjustments for the opening hours section */
         .opening-hours {
             text-align: center; /* Center the content */
+            margin-bottom: 60px; /* More space after the section */
         }
 
-        /* Staircase layout for contact info */
+        /* Clean and professional look for contact info */
         .contact-info {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .contact-info p {
-            margin-left: calc(10% * var(--index)); /* Staircase effect */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            text-align: left;
+            margin-bottom: 60px; /* More space after the section */
         }
 
-        /* Facilities in a single line */
+        /* Expanded facilities across the screen */
         .facilities {
             display: flex;
-            justify-content: space-around; /* Evenly space facilities */
+            justify-content: space-around; /* Space out facilities */
+            margin: 0 5%; /* Use margins for large screens */
             padding: 10px 0;
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 0px 10px 10px;
+                padding: 10px;
             }
 
             .logo {
-                margin-top: 70px;
-                max-height: 120px; /* Adjust logo size on mobile */
-            }
-
-            header, footer {
-                padding: 8px 0;
+                margin-top: 20px;
+                max-height: 100px; /* Adjust logo size on mobile */
             }
 
             .info-section {
                 padding: 15px;
-                margin: 10px 0;
-                font-size: 0.9em;
+                margin-bottom: 20px; /* Adjusted margins for mobile */
             }
 
             .facilities {
                 flex-wrap: wrap; /* Wrap facilities on smaller screens */
+                justify-content: space-between; /* Adjust spacing on mobile */
             }
 
-            .contact-info p {
-                margin-left: calc(5% * var(--index)); /* Adjust staircase effect on mobile */
+            .contact-info {
+                grid-template-columns: 1fr;
+                text-align: center; /* Center on mobile for readability */
             }
         }
     </style>
-    <script>
-        let lastScrollTop = 0;
-        window.onscroll = function() {
-            var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-            var header = document.querySelector('header');
-            var logo = document.querySelector('.logo');
-
-            if (currentScroll > lastScrollTop) {
-                // Scrolling down
-                header.classList.add("hidden-header");
-                logo.style.opacity = Math.max(0, 1 - currentScroll / 300);
-                logo.style.transform = 'scale(' + Math.max(0.5, 1 - currentScroll / 600) + ')';
-            } else {
-                // Scrolling up
-                header.classList.remove("hidden-header");
-                logo.style.opacity = Math.min(1, (1 - currentScroll / 300) + 0.5);
-                logo.style.transform = 'scale(' + Math.min(1, (1 - currentScroll / 600) + 0.5) + ')';
-            }
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
-        };
-    </script>
 </head>
 <body>
 
@@ -179,28 +152,21 @@
         <div class="info-section opening-hours">
             <h2>Opening Hours</h2>
             <p>Monday: 9:00 am - 7:00 pm</p>
-            <p>&nbsp;</p>
             <p>Tuesday: 9:00 am - 7:00 pm</p>
-            <p>&nbsp;</p>
             <p>Wednesday: 9:00 am - 7:00 pm</p>
-            <p>&nbsp;</p>
             <p>Thursday: 9:00 am - 7:00 pm</p>
-            <p>&nbsp;</p>
             <p>Friday: 9:00 am - 7:00 pm</p>
-            <p>&nbsp;</p>
             <p>Saturday: 9:00 am - 7:00 pm</p>
-            <p>&nbsp;</p>
             <p>Sunday: 9:00 am - 7:00 pm</p>
-            <p>&nbsp;</p>
         </div>
 
         <div class="info-section contact-info">
             <h2>Contact Info</h2>
-            <p style="--index:0">Address: <a href="https://maps.google.com/?q=3192+Eglinton+Avenue+East,+Scarborough,+ON,+Canada+M1J+2H5" target="_blank">3192 Eglinton Avenue East, Scarborough, ON, Canada M1J 2H5</a></p>
-            <p style="--index:1">Phone: <a href="tel:+16477858536">647-785-8536</a></p>
-            <p style="--index:2">Wholesale Inquiries: <a href="tel:+19057069050">905-706-9050</a></p>
-            <p style="--index:3">Instagram: <a href="https://instagram.com/_HZ_FASHION" target="_blank">@_HZ_FASHION</a>, <a href="https://instagram.com/HASSANZADA_TEXTILES" target="_blank">@HASSANZADA_TEXTILES</a></p>
-            <p style="--index:4">Email: <a href="mailto:HASSANZADA_TEXTILES@yahoo.com">HASSANZADA_TEXTILES@yahoo.com</a></p>
+            <p>Address: <a href="https://maps.google.com/?q=3192+Eglinton+Avenue+East,+Scarborough,+ON,+Canada+M1J+2H5" target="_blank">3192 Eglinton Avenue East, Scarborough, ON, Canada M1J 2H5</a></p>
+            <p>Phone: <a href="tel:+16477858536">647-785-8536</a></p>
+            <p>Wholesale Inquiries: <a href="tel:+19057069050">905-706-9050</a></p>
+            <p>Instagram: <a href="https://instagram.com/_HZ_FASHION" target="_blank">@_HZ_FASHION</a>, <a href="https://instagram.com/HASSANZADA_TEXTILES" target="_blank">@HASSANZADA_TEXTILES</a></p>
+            <p>Email: <a href="mailto:HASSANZADA_TEXTILES@yahoo.com">HASSANZADA_TEXTILES@yahoo.com</a></p>
         </div>
 
         <div class="info-section facilities">
