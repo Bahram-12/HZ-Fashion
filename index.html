@@ -87,19 +87,28 @@
 
         /* Clean and professional look for contact info */
         .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
             text-align: center;
             margin-bottom: 60px; /* More space after the section */
+        }
+
+        .contact-info p {
+            margin: 5px 10px; /* Adjust spacing within contact info */
         }
 
         /* Expanded facilities across the screen */
         .facilities {
             display: flex;
             justify-content: space-between; /* Space out facilities across the full width */
-            margin: 0 5%; /* Use margins for large screens */
+            margin: 0 10px; /* Adjusted margins for facilities */
             padding: 10px 0;
+        }
+
+        .facility {
+            text-align: center;
+            flex-grow: 1; /* Ensure each facility takes equal space */
         }
 
         @media (max-width: 768px) {
@@ -117,14 +126,18 @@
                 margin-bottom: 20px; /* Adjusted margins for mobile */
             }
 
-            .facilities {
-                flex-wrap: wrap; /* Wrap facilities on smaller screens */
-                justify-content: space-between; /* Adjust spacing on mobile */
+            .contact-info {
+                grid-template-columns: 1fr;
+                text-align: center; /* Center on mobile for readability */
             }
 
-            .contact-info {
-                flex-direction: column;
-                text-align: center; /* Center on mobile for readability */
+            .facilities {
+                flex-direction: column; /* Stack facilities vertically on smaller screens */
+                align-items: center;
+            }
+
+            .facility {
+                margin-bottom: 10px; /* Space between facilities on mobile */
             }
         }
     </style>
@@ -159,21 +172,21 @@
 
         <div class="info-section contact-info">
             <h2>Contact Info</h2>
-            <p>Address: <a href="https://maps.google.com/?q=3192+Eglinton+Avenue+East,+Scarborough,+ON,+Canada+M1J+2H5" target="_blank">3192 Eglinton Avenue East, Scarborough, ON, Canada M1J 2H5</a></p>
-            <p>Phone: <a href="tel:+16477858536">647-785-8536</a></p>
-            <p>Wholesale Inquiries: <a href="tel:+19057069050">905-706-9050</a></p>
-            <p>Instagram: <a href="https://instagram.com/_HZ_FASHION" target="_blank">@_HZ_FASHION</a>, <a href="https://instagram.com/HASSANZADA_TEXTILES" target="_blank">@HASSANZADA_TEXTILES</a></p>
-            <p>Email: <a href="mailto:HASSANZADA_TEXTILES@yahoo.com">HASSANZADA_TEXTILES@yahoo.com</a></p>
+            <div><p>Address: <a href="https://maps.google.com/?q=3192+Eglinton+Avenue+East,+Scarborough,+ON,+Canada+M1J+2H5" target="_blank">3192 Eglinton Avenue East, Scarborough, ON, Canada M1J 2H5</a></p></div>
+            <div><p>Phone: <a href="tel:+16477858536">647-785-8536</a></p></div>
+            <div><p>Wholesale Inquiries: <a href="tel:+19057069050">905-706-9050</a></p></div>
+            <div><p>Instagram: <a href="https://instagram.com/_HZ_FASHION" target="_blank">@_HZ_FASHION</a>, <a href="https://instagram.com/HASSANZADA_TEXTILES" target="_blank">@HASSANZADA_TEXTILES</a></p></div>
+            <div><p>Email: <a href="mailto:HASSANZADA_TEXTILES@yahoo.com">HASSANZADA_TEXTILES@yahoo.com</a></p></div>
         </div>
 
         <div class="info-section facilities">
             <h2>Facilities</h2>
             <div class="facilities">
-                <div><i class="fas fa-wifi"></i> Free WiFi</div>
-                <div><i class="fas fa-parking"></i> Parking Available</div>
-                <div><i class="fas fa-wheelchair"></i> Wheelchair Accessible</div>
-                <div><i class="fas fa-bus"></i> Public Transport</div>
-                <div><i class="fas fa-child"></i> Family Friendly</div>
+                <div class="facility"><i class="fas fa-wifi"></i> Free WiFi</div>
+                <div class="facility"><i class="fas fa-parking"></i> Parking Available</div>
+                <div class="facility"><i class="fas fa-wheelchair"></i> Wheelchair Accessible</div>
+                <div class="facility"><i class="fas fa-bus"></i> Public Transport</div>
+                <div class="facility"><i class="fas fa-child"></i> Family Friendly</div>
             </div>
         </div>
     </div>
