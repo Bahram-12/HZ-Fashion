@@ -6,45 +6,45 @@
     <title>HZ Fashion - Store Overview</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-         * {
+        * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+            box-sizing: border-box;
         }
 
- body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #e6e6e6;
-    color: #333;
-    font-family: 'Playfair Display', serif;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-}
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #4e342e; /* Dark brown background */
+            color: #333;
+            font-family: 'Playfair Display', serif;
+            overflow-x: hidden;
+        }
 
-.container {
-    min-height: 100vh;
-    width: 100%;
-    padding: 120px 20px 10px; /* Reduced bottom padding */
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column; /* Keeps footer at the bottom */
-}
-
+        .container {
+            min-height: 100vh;
+            width: 100%;
+            padding: 0px 20px 10px; /* Adjust top padding to 0 */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
 
         header {
-            background-color: #c9b037;
+            background-color: transparent; /* Removed box color */
             color: black;
             text-align: center;
-            padding: 0;
+            padding: 10px 0;
             width: 100%;
-            top: 0; /* Ensures header is right at the top */
+            position: fixed; /* Make header fixed at the top */
+            top: 0;
             left: 0;
             z-index: 1000;
             transition: top 0.3s;
         }
         .hidden-header {
-            top: -100px; /* Adjust based on actual header height */
+            top: -100px; /* Hide the header on scroll */
         }
 
         footer {
@@ -55,51 +55,58 @@
             width: 100%;
         }
 
-.logo {
-    position: dynamic;
-    top: 100px; /* Below the header, adjusted */
-    left: 20px;
-    max-height: 80px; /* Increased height for visibility */
-    z-index: 1050;
-}
+        .logo {
+            margin-top: 60px; /* Margin top to push logo below header */
+            display: block; /* Ensures logo is a block for margin to work */
+            max-height: 80px;
+            z-index: 1050;
+        }
 
-.content {
-    flex-grow: 1; /* Allows content to fill available space */
-    padding-top: 100px;
-}
+        .content {
+            flex-grow: 1;
+            padding-top: 20px; /* Adjust content padding */
+        }
 
-.info-section {
-    background: transparent;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: none;
-    text-align: center;
-}
+        .info-section {
+            background: transparent;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: none;
+            text-align: center;
+        }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 130px 10px 10px; /* Adjusted for smaller screens */
-    }
+        @media (max-width: 768px) {
+            .container {
+                padding: 0px 10px 10px; /* Adjust top padding to 0 */
+            }
 
-    .logo {
-        top: 75px; /* Adjusted for mobile */
-        left: 10px;
-        max-height: 70px; /* Larger on mobile for visibility */
-    }
+            .logo {
+                margin-top: 70px; /* Adjust logo margin on mobile */
+                max-height: 70px;
+            }
 
-    header, footer {
-        padding: 8px 0; /* Even thinner on mobile */
-    }
+            header, footer {
+                padding: 8px 0;
+            }
 
-    .info-section {
-        padding: 15px;
-        margin: 10px 0;
-        font-size: 0.9em;
-    }
-}
-
+            .info-section {
+                padding: 15px;
+                margin: 10px 0;
+                font-size: 0.9em;
+            }
+        }
     </style>
+    <script>
+        window.onscroll = function() {
+            var header = document.querySelector('header');
+            if (window.pageYOffset > 0) {
+                header.classList.add("hidden-header");
+            } else {
+                header.classList.remove("hidden-header");
+            }
+        };
+    </script>
 </head>
 <body>
 
@@ -111,36 +118,36 @@
     </header>
 
     <div class="content">
-        <p>Welcome to HZ Fashion, the ultimate destination for exclusive and elegant hijab party dresses, stylish casual wear, and a diverse collection of accessories. At HZ Fashion, we are dedicated to providing our customers with the highest quality boutique women's fashion, offering both retail and wholesale options to meet various needs.</p>Our product line includes:</p>1. **Hijab Party Dresses:** Discover our handpicked selection of hijab party dresses, designed to make you stand out at any occasion. From sequined gowns to embroidered maxi dresses, our collection is curated to offer you the best in modest fashion with a touch of elegance.</p>2. **Casual Wear:** Browse through our extensive range of casual wear, including tunics, blouses, skirts, and trousers. Whether you're looking for something comfortable for daily wear or an outfit that's both stylish and modest, you'll find it here.</p>3. **Accessories:** Accessorize your look with our wide array of fashion accessories. From hijabs and scarves to jewelry and handbags, our accessories are perfect to complete your outfit and add a personal touch to your style.</p>4. **Household Items:** In addition to women's fashion, we offer a variety of household items that blend functionality with style. From decorative cushions and throws to elegant tableware and kitchen accessories, find everything you need to beautify your home.</p>At HZ Fashion, we specialize in providing a seamless shopping experience with a focus on quality and customer satisfaction. Whether you are shopping for yourself, your home, or looking to stock your business, we have everything you need under one roof. Visit us and discover why HZ Fashion is a favored destination for those who appreciate style, quality, and a diverse range of products.</p>
+        <p>Welcome to HZ Fashion, the ultimate destination for exclusive and elegant hijab party dresses, stylish casual wear, and a diverse collection of accessories. At HZ Fashion, we are dedicated to providing our customers with the highest quality boutique women's fashion, offering both retail and wholesale options to meet various needs.</p>
 
         <div class="info-section">
             <h2>Opening Hours</h2>
             <p>Monday: 9:00 am - 7:00 pm</p>
-            <p></p>
+            <p>&nbsp;</p>
             <p>Tuesday: 9:00 am - 7:00 pm</p>
-            <p></p>
+            <p>&nbsp;</p>
             <p>Wednesday: 9:00 am - 7:00 pm</p>
-            <p></p>
+            <p>&nbsp;</p>
             <p>Thursday: 9:00 am - 7:00 pm</p>
-            <p></p>
+            <p>&nbsp;</p>
             <p>Friday: 9:00 am - 7:00 pm</p>
-            <p></p>
+            <p>&nbsp;</p>
             <p>Saturday: 9:00 am - 7:00 pm</p>
-            <p></p>
+            <p>&nbsp;</p>
             <p>Sunday: 9:00 am - 7:00 pm</p>
-            <p></p>
+            <p>&nbsp;</p>
         </div>
 
         <div class="info-section">
             <h2>Contact Info</h2>
             <p>Address: <a href="https://maps.google.com/?q=3192+Eglinton+Avenue+East,+Scarborough,+ON,+Canada+M1J+2H5" target="_blank">3192 Eglinton Avenue East, Scarborough, ON, Canada M1J 2H5</a></p>
-            <p></p>
+            <p>&nbsp;</p>
             <p>Phone: <a href="tel:+16477858536">647-785-8536</a></p>
-            <p></p>
+            <p>&nbsp;</p>
             <p>Wholesale Inquiries: <a href="tel:+19057069050">905-706-9050</a></p>
-            <p></p>
+            <p>&nbsp;</p>
             <p>Instagram: <a href="https://instagram.com/_HZ_FASHION" target="_blank">@_HZ_FASHION</a>, <a href="https://instagram.com/HASSANZADA_TEXTILES" target="_blank">@HASSANZADA_TEXTILES</a></p>
-            <p></p>
+            <p>&nbsp;</p>
             <p>Email: <a href="mailto:HASSANZADA_TEXTILES@yahoo.com">HASSANZADA_TEXTILES@yahoo.com</a></p>
         </div>
 
@@ -149,7 +156,7 @@
             <div class="facility"><i class="fas fa-wifi"></i><p>Free WiFi</p></div>
             <div class="facility"><i class="fas fa-parking"></i><p>Parking Available</p></div>
             <div class="facility"><i class="fas fa-wheelchair"></i><p>Wheelchair Accessible</p></div>
-            <div the "facility"><i class="fas fa-bus"></i><p>Public Transport</p></div>
+            <div class="facility"><i class="fas fa-bus"></i><p>Public Transport</p></div>
             <div class="facility"><i class="fas fa-child"></i><p>Family Friendly</p></div>
         </div>
     </div>
