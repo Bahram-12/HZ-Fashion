@@ -87,36 +87,33 @@
 
         /* Layout for contact info */
         .contact-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            text-align: left;
+            display: flex;
+            justify-content: center;
             margin-bottom: 60px; /* More space after the section */
         }
 
         .contact-column {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
+            margin: 0 20px; /* Horizontal spacing between columns */
         }
 
-        /* Adjust contact info item spacing */
         .contact-item {
-            margin-bottom: 20px;
+            margin-bottom: 10px; /* Vertical spacing within columns */
         }
 
         /* Layout for facilities */
         .facilities {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between; /* Space out facilities across the full width */
-            margin: 0 10px; /* Adjusted margins for facilities */
+            justify-content: center; /* Center-align the facilities */
         }
 
         .facility {
-            flex: 0 0 32%; /* Ensure 3 facilities per row */
+            flex: 1 0 30%; /* Give facilities some breathing room */
+            margin: 10px;
             text-align: center;
-            margin-bottom: 10px; /* Space between facilities rows */
         }
 
         @media (max-width: 768px) {
@@ -135,15 +132,13 @@
             }
 
             .contact-info {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-column {
-                margin-bottom: 20px;
+                flex-direction: column;
+                align-items: center; /* Center-align columns on mobile */
             }
 
             .facility {
-                flex: 0 0 48%; /* Adjust for two facilities per row on mobile */
+                flex: 1 0 48%; /* Adjust for mobile layout */
+                margin: 5px;
             }
         }
     </style>
@@ -194,6 +189,8 @@
                 <div class="facility"><i class="fas fa-wifi"></i> Free WiFi</div>
                 <div class="facility"><i class="fas fa-parking"></i> Parking Available</div>
                 <div class="facility"><i class="fas fa-wheelchair"></i> Wheelchair Accessible</div>
+            </div>
+            <div class="facilities">
                 <div class="facility"><i class="fas fa-bus"></i> Public Transport</div>
                 <div class="facility"><i class="fas fa-child"></i> Family Friendly</div>
             </div>
